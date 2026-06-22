@@ -2,7 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, Github, ExternalLink } from "lucide-react";
 import { CodeBlock } from "@/components/CodeBlock";
 import { ProjectCard } from "@/components/ProjectCard";
-import { projects } from "@/data/projects";
+import { projects, type Project } from "@/data/projects";
 
 export const Route = createFileRoute("/project/$id")({
   loader: ({ params }) => {
