@@ -71,7 +71,7 @@ function ProjectDetailPage() {
       <section className="mb-10">
         <h2 className="text-[20px] font-medium mb-4">Résultats</h2>
         <div className="grid sm:grid-cols-3 gap-4">
-          {project.results.map((r) => (
+          {project.results.map((r: { label: string; value: string }) => (
             <div key={r.label} className="border border-[var(--color-line)] rounded-[12px] p-5 bg-white">
               <div className="text-[24px] font-medium text-[var(--color-brand)]">{r.value}</div>
               <div className="text-[12px] text-[var(--color-ink-soft)] mt-1">{r.label}</div>
