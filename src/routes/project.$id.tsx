@@ -51,7 +51,7 @@ function ProjectDetailPage() {
           {project.long}
         </p>
         <div className="flex flex-wrap gap-1.5 mt-5">
-          {project.tags.map((t) => (
+          {project.tags.map((t: string) => (
             <span key={t} className="tag-mono">{t}</span>
           ))}
         </div>
