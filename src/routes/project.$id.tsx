@@ -5,7 +5,7 @@ import { ProjectCard } from "@/components/ProjectCard";
 import { projects, type Project } from "@/data/projects";
 
 export const Route = createFileRoute("/project/$id")({
-  loader: ({ params }) => {
+  loader: ({ params }): { project: Project } => {
     const project = projects.find((p) => p.id === params.id);
     if (!project) throw notFound();
     return { project };
