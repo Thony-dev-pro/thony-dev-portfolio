@@ -157,7 +157,7 @@ function BlogPostPage() {
             <div>
               <p className="eyebrow mb-3">Sommaire</p>
               <ul className="flex flex-col gap-2 text-[13px]">
-                {headings.map((h) => (
+                {headings.map((h: string) => (
                   <li key={h}>
                     <a href={`#${slugify(h)}`} className="text-[var(--color-ink-soft)] hover:text-[var(--color-brand)] transition-colors">
                       {h}
