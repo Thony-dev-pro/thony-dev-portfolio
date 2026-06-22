@@ -89,7 +89,7 @@ function slugify(s: string) {
 
 function BlogPostPage() {
   const { post, idx } = Route.useLoaderData();
-  const headings = post.body.split("\n").filter((l) => l.startsWith("## ")).map((l) => l.slice(3));
+  const headings = post.body.split("\n").filter((l: string) => l.startsWith("## ")).map((l: string) => l.slice(3));
   const recommended = blogPosts.filter((p) => p.slug !== post.slug).slice(0, 3);
   const prev = idx > 0 ? blogPosts[idx - 1] : null;
   const next = idx < blogPosts.length - 1 ? blogPosts[idx + 1] : null;
