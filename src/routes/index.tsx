@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Mail, Linkedin, Github, MapPin } from "lucide-react";
 import { CodeBlock } from "@/components/CodeBlock";
-import { StatBar } from "@/components/StatBar";
 import { SectionHeader } from "@/components/SectionHeader";
 import { SkillChip } from "@/components/SkillChip";
 import { ProjectCard } from "@/components/ProjectCard";
@@ -13,8 +12,8 @@ import { experience } from "@/data/experience";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Alexandre Martin — Développeur Node.js back-end" },
-      { name: "description", content: "Architectures back-end robustes en Node.js, microservices et cloud. 5+ ans d'expérience." },
+      { title: "Rasolofondraibe Thony — Développeur Full Stack" },
+      { name: "description", content: "Développeur Full Stack spécialisé en Node.js, Angular et MongoDB." },
     ],
   }),
   component: HomePage,
@@ -39,15 +38,15 @@ function HomePage() {
       {/* HERO */}
       <section className="max-w-6xl mx-auto px-6 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center">
         <div className="fade-in">
-          <p className="eyebrow mb-4">Développeur back-end</p>
+          <p className="eyebrow mb-4">Développeur Full Stack</p>
           <h1 className="text-[32px] md:text-[38px] font-medium leading-[1.15] tracking-tight">
-            Alexandre <span className="text-[var(--color-brand)]">Martin</span>
+            Rasolofondraibe <span className="text-[var(--color-brand)]">Thony</span>
             <br />
-            Node.js · API · Cloud
+            Node.js · Angular
           </h1>
           <p className="mt-5 text-[15px] text-[var(--color-ink-soft)] leading-relaxed max-w-lg">
-            Je conçois des architectures back-end robustes et scalables.
-            Spécialisé en Node.js, microservices REST/GraphQL et déploiement cloud.
+            Je conçois des applications web complètes, du back-end à l'interface utilisateur.
+            Spécialisé en Node.js, Angular et intégration de solutions de paiement.
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
             <Link to="/projects" className="btn-primary">
@@ -61,8 +60,6 @@ function HomePage() {
           <CodeBlock code={heroCode} />
         </div>
       </section>
-
-      <StatBar />
 
       {/* STACK */}
       <section className="max-w-6xl mx-auto px-6 py-20">
@@ -106,7 +103,17 @@ function HomePage() {
               <div className="text-[12px] font-mono text-[var(--color-ink-faint)]">{e.period}</div>
               <div>
                 <h3 className="text-[16px] font-medium">{e.role} · <span className="text-[var(--color-ink-soft)]">{e.company}</span></h3>
-                <p className="mt-2 text-[14px] text-[var(--color-ink-soft)] leading-relaxed">{e.description}</p>
+                <ul className="mt-2 space-y-1">
+                  {e.tasks.map((t) => (
+                    <li key={t} className="text-[14px] text-[var(--color-ink-soft)] leading-relaxed flex gap-2">
+                      <span className="text-[var(--color-brand)] mt-[3px] shrink-0">—</span>
+                      {t}
+                    </li>
+                  ))}
+                </ul>
+                {e.stack && (
+                  <p className="mt-3 text-[12px] font-mono text-[var(--color-brand)] opacity-80">{e.stack}</p>
+                )}
               </div>
             </article>
           ))}
@@ -124,10 +131,10 @@ function HomePage() {
             </p>
           </div>
           <div className="grid sm:grid-cols-2 gap-3">
-            <ContactItem icon={Mail} label="Email" value="alex@martin.dev" href="mailto:alex@martin.dev" />
-            <ContactItem icon={Linkedin} label="LinkedIn" value="linkedin.com/in/alexmartin" href="https://linkedin.com/in/alexmartin" />
-            <ContactItem icon={Github} label="GitHub" value="github.com/alexmartin" href="https://github.com/alexmartin" />
-            <ContactItem icon={MapPin} label="Localisation" value="Paris, France · Remote OK" />
+            <ContactItem icon={Mail} label="Email" value="rasolofondraibethoony@gmail.com" href="mailto:rasolofondraibethoony@gmail.com" />
+            <ContactItem icon={Linkedin} label="LinkedIn" value="linkedin.com/in/rasolofondraibe-thony-0ab57930a" href="https://www.linkedin.com/in/rasolofondraibe-thony-0ab57930a" />
+            <ContactItem icon={Github} label="GitHub" value="github.com/Thony-dev-pro" href="https://github.com/Thony-dev-pro" />
+            <ContactItem icon={MapPin} label="Localisation" value="Antananarivo, Madagascar" />
           </div>
         </div>
       </section>

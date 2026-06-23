@@ -64,9 +64,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Alexandre Martin — Développeur Node.js back-end" },
-      { name: "description", content: "Portfolio d'Alexandre Martin, développeur Node.js spécialisé en API, microservices et cloud." },
-      { property: "og:title", content: "Alexandre Martin — Développeur Node.js" },
+      { title: "Rasolofondraibe Thony — Développeur Node.js back-end" },
+      { name: "description", content: "Portfolio de Rasolofondraibe Thony, développeur Node.js spécialisé en API, microservices et cloud." },
+      { property: "og:title", content: "Rasolofondraibe Thony — Développeur Node.js" },
       { property: "og:description", content: "Architectures back-end robustes : Node.js, microservices, REST/GraphQL et cloud." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },

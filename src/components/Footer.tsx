@@ -4,7 +4,7 @@ export function Footer() {
   return (
     <footer className="border-t border-[var(--color-line)] bg-white">
       <div className="max-w-6xl mx-auto px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-[var(--color-ink-soft)]">
-        <p>© 2026 Alexandre Martin</p>
+        <p>© 2026 Rasolofondraibe Thony</p>
         <div className="flex items-center gap-5">
           <a href="https://github.com/alexmartin" aria-label="GitHub" className="hover:text-[var(--color-brand)]">
             <Github size={16} />
@@ -16,9 +16,6 @@ export function Footer() {
             <Twitter size={16} />
           </a>
         </div>
-        <p>
-          Fait avec <span className="text-[var(--color-brand)] font-medium">Node.js</span> &amp; ❤️
-        </p>
       </div>
     </footer>
   );

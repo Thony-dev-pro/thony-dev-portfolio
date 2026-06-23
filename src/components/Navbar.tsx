@@ -5,7 +5,6 @@ import { Menu, X, Download } from "lucide-react";
 const links = [
   { to: "/", label: "À propos" },
   { to: "/projects", label: "Projets" },
-  { to: "/blog", label: "Blog" },
   { to: "/contact", label: "Contact" },
 ] as const;
 
@@ -17,7 +16,7 @@ export function Navbar() {
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2 font-semibold text-[15px]">
           <span className="w-2.5 h-2.5 rounded-full bg-[var(--color-brand)]" />
-          alex.dev
+          Thony.dev
         </Link>
 
         <nav className="hidden md:flex items-center gap-7 text-sm text-[var(--color-ink-soft)]">

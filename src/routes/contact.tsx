@@ -6,8 +6,8 @@ import { ContactItem } from "@/components/ContactItem";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Alexandre Martin" },
-      { name: "description", content: "Contactez Alexandre Martin pour une mission freelance ou un poste back-end Node.js." },
+      { title: "Contact — Rasolofondraibe Thony" },
+      { name: "description", content: "Contactez Rasolofondraibe Thony pour une mission freelance ou un poste Full Stack." },
     ],
   }),
   component: ContactPage,
@@ -25,6 +25,9 @@ function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const { firstName, lastName, email, subject, message } = form;
+    const body = `Prénom: ${firstName}\nNom: ${lastName}\nEmail: ${email}\n\n${message}`;
+    window.location.href = `mailto:rasolofondraibethoony@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     setSent(true);
   };
 
@@ -40,10 +43,10 @@ function ContactPage() {
 
       <div className="grid lg:grid-cols-2 gap-10">
         <div className="flex flex-col gap-3">
-          <ContactItem icon={Mail} label="Email" value="alex@martin.dev" href="mailto:alex@martin.dev" />
-          <ContactItem icon={Linkedin} label="LinkedIn" value="linkedin.com/in/alexmartin" href="https://linkedin.com/in/alexmartin" />
-          <ContactItem icon={Github} label="GitHub" value="github.com/alexmartin" href="https://github.com/alexmartin" />
-          <ContactItem icon={MapPin} label="Localisation" value="Paris, France · Remote OK" />
+          <ContactItem icon={Mail} label="Email" value="rasolofondraibethoony@gmail.com" href="mailto:rasolofondraibethoony@gmail.com" />
+          <ContactItem icon={Linkedin} label="LinkedIn" value="linkedin.com/in/rasolofondraibe-thony-0ab57930a" href="https://www.linkedin.com/in/rasolofondraibe-thony-0ab57930a" />
+          <ContactItem icon={Github} label="GitHub" value="github.com/Thony-dev-pro" href="https://github.com/Thony-dev-pro" />
+          <ContactItem icon={MapPin} label="Localisation" value="Antananarivo, Madagascar" />
           <p className="text-[13px] text-[var(--color-ink-soft)] mt-3 px-1">
             Réponse sous 24h · Disponible pour freelance
           </p>

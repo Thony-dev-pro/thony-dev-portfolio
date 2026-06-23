@@ -6,8 +6,8 @@ import { projects, allTags } from "@/data/projects";
 export const Route = createFileRoute("/projects")({
   head: () => ({
     meta: [
-      { title: "Projets — Alexandre Martin" },
-      { name: "description", content: "Sélection des projets back-end Node.js livrés par Alexandre Martin." },
+      { title: "Projets — Rasolofondraibe Thony" },
+      { name: "description", content: "Sélection des projets back-end Node.js livrés par Rasolofondraibe Thony." },
     ],
   }),
   component: ProjectsPage,

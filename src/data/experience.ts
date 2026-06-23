@@ -3,28 +3,39 @@ export type Experience = {
   role: string;
   company: string;
   description: string;
+  tasks: string[];
+  stack?: string;
 };
 
 export const experience: Experience[] = [
   {
-    period: "2022 — présent",
-    role: "Lead Back-end Engineer",
-    company: "TechFlow SAS, Paris",
-    description:
-      "Conception d'APIs REST haute disponibilité, pilotage de la migration vers une architecture microservices, mentoring d'une équipe de 3 développeurs.",
+    period: "Depuis février 2025",
+    role: "Développeur Full Stack",
+    company: "Vanilla Pay International",
+    description: "Développement de nouvelles fonctionnalités pour le Back Office Client et Administrateur.",
+    tasks: [
+      "Développement de nouvelles fonctionnalités pour le Back Office Client et Administrateur",
+      "Intégration des solutions de paiement mobile money : MVola, Orange Money et Airtel Money",
+      "Conception et développement d'API de paiement USSD pour Airtel Money et Orange Money, destinées aux offres de YAS Madagascar",
+      "Amélioration et maintenance des modules PrestaShop et WordPress",
+      "Support et assistance technique aux clients",
+      "Analyse et correction des bugs signalés par les utilisateurs",
+    ],
+    stack: "Node.js · Express.js",
   },
   {
-    period: "2020 — 2022",
-    role: "Développeur Node.js",
-    company: "StartupXYZ, Remote",
-    description:
-      "Conception du back-end SaaS from scratch, intégration des passerelles de paiement, mise en place de la facturation automatique et des webhooks Stripe.",
-  },
-  {
-    period: "2019 — 2020",
-    role: "Développeur Full-stack junior",
-    company: "Agence Numérique, Lyon",
-    description:
-      "Développement de sites et APIs pour clients PME, premiers pas en production avec Node.js, Express et MongoDB.",
+    period: "Octobre 2024 — Février 2025",
+    role: "Stage Développeur Full Stack",
+    company: "Vanilla Pay International",
+    description: "Contribution au développement et à la maintenance de la plateforme de paiement.",
+    tasks: [
+      "Développement d'une fonctionnalité de gestion des litiges pour les transactions Stripe",
+      "Intégration de la passerelle de paiement Mollie au sein de la plateforme",
+      "Automatisation des demandes de reversement à la suite des paiements reçus",
+      "Création d'un module de gestion des offres commerciales et des offres promotionnelles",
+      "Maintenance corrective et évolutive de l'application",
+      "Rédaction et mise à jour de la documentation technique",
+    ],
+    stack: "Node.js · Express.js",
   },
 ];

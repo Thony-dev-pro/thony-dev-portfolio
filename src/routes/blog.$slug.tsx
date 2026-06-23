@@ -147,7 +147,7 @@ function BlogPostPage() {
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full bg-[var(--color-brand-soft)] text-[var(--color-brand-deep)] flex items-center justify-center font-medium">AM</div>
               <div>
-                <div className="text-[14px] font-medium">Alexandre Martin</div>
+                <div className="text-[14px] font-medium">Rasolofondraibe Thony</div>
                 <div className="text-[12px] text-[var(--color-ink-soft)]">Dev Node.js back-end</div>
               </div>
             </div>
