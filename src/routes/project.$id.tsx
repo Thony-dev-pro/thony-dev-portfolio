@@ -1,7 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, Github, ExternalLink } from "lucide-react";
 import { CodeBlock } from "@/components/CodeBlock";
-import { ProjectCard } from "@/components/ProjectCard";
 import { projects, type Project } from "@/data/projects";
 
 export const Route = createFileRoute("/project/$id")({
@@ -27,7 +26,6 @@ export const Route = createFileRoute("/project/$id")({
 
 function ProjectDetailPage() {
   const { project } = Route.useLoaderData();
-  const related = projects.filter((p) => p.id !== project.id).slice(0, 2);
 
   return (
     <article className="max-w-4xl mx-auto px-6 py-12">
@@ -88,15 +86,6 @@ function ProjectDetailPage() {
           <a href={project.demo} className="btn-outline"><ExternalLink size={14} /> Demo live</a>
         )}
       </div>
-
-      <section className="border-t border-[var(--color-line)] pt-10">
-        <h2 className="text-[20px] font-medium mb-5">Projets similaires</h2>
-        <div className="grid md:grid-cols-2 gap-5">
-          {related.map((p) => (
-            <ProjectCard key={p.id} project={p} />
-          ))}
-        </div>
-      </section>
     </article>
   );
 }
