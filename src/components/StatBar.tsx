@@ -1,18 +1,24 @@
 const stats = [
-  { value: "1+", label: "Années d'expérience" },
-  { value: "30+", label: "Projets livrés" },
-  { value: "12", label: "Clients satisfaits" },
-  { value: "99%", label: "Uptime moyen" },
+  { value: "3+", label: "ans d'expérience" },
+  { value: "15+", label: "projets livrés" },
+  { value: "Full", label: "stack" },
 ];
 
 export function StatBar() {
   return (
-    <section className="border-y border-[var(--color-line)] bg-white">
-      <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 divide-x divide-y md:divide-y-0 divide-[var(--color-line)]">
+    <section className="max-w-6xl mx-auto px-6 pb-4">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
         {stats.map((s) => (
-          <div key={s.label} className="text-center py-8 px-4">
-            <div className="text-[26px] font-medium tracking-tight">{s.value}</div>
-            <div className="text-[12px] text-[var(--color-ink-soft)] mt-1">{s.label}</div>
+          <div
+            key={s.label}
+            className="border border-[var(--color-line)] bg-[var(--color-surface-alt)] rounded-[8px] py-6 px-5"
+          >
+            <div className="text-[28px] font-mono font-medium text-[var(--color-brand)] leading-none">
+              {s.value}
+            </div>
+            <div className="mt-2 font-mono text-[11px] uppercase tracking-wider text-[var(--color-ink-faint)]">
+              {s.label}
+            </div>
           </div>
         ))}
       </div>

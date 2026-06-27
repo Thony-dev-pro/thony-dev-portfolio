@@ -5,7 +5,7 @@ import type { Project } from "@/data/projects";
 export function ProjectCard({ project }: { project: Project }) {
   return (
     <article
-      className={`group rounded-[12px] border border-[var(--color-line)] bg-white p-5 flex flex-col gap-4 transition-colors hover:border-[var(--color-brand)] ${
+      className={`group rounded-[8px] border border-[var(--color-line)] bg-[var(--color-surface-alt)] p-5 flex flex-col gap-4 transition-colors hover:border-[var(--color-brand)] ${
         project.featured ? "border-t-2 border-t-[var(--color-brand)]" : ""
       }`}
     >

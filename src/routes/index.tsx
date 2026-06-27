@@ -5,6 +5,7 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { SkillChip } from "@/components/SkillChip";
 import { ProjectCard } from "@/components/ProjectCard";
 import { ContactItem } from "@/components/ContactItem";
+import { StatBar } from "@/components/StatBar";
 import { skills } from "@/data/skills";
 import { projects } from "@/data/projects";
 import { experience } from "@/data/experience";
@@ -38,11 +39,11 @@ function HomePage() {
       {/* HERO */}
       <section className="max-w-6xl mx-auto px-6 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center">
         <div className="fade-in">
-          <p className="eyebrow mb-4">Développeur Full Stack</p>
-          <h1 className="text-[32px] md:text-[38px] font-medium leading-[1.15] tracking-tight">
+          <p className="eyebrow mb-4">{"> "}Développeur Full Stack</p>
+          <h1 className="text-[36px] md:text-[40px] font-semibold leading-[1.1] tracking-[-0.02em]">
             Rasolofondraibe <span className="text-[var(--color-brand)]">Thony</span>
             <br />
-            Node.js · Angular
+            <span className="font-mono text-[var(--color-ink-soft)] text-[26px] md:text-[30px] font-normal">Node.js · Angular</span>
           </h1>
           <p className="mt-5 text-[15px] text-[var(--color-ink-soft)] leading-relaxed max-w-lg">
             Je conçois des applications web complètes, du back-end à l'interface utilisateur.
@@ -60,6 +61,9 @@ function HomePage() {
           <CodeBlock code={heroCode} />
         </div>
       </section>
+
+      {/* STATS */}
+      <StatBar />
 
       {/* STACK */}
       <section className="max-w-6xl mx-auto px-6 py-20">

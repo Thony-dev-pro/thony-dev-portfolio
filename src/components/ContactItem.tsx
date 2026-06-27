@@ -15,9 +15,9 @@ export function ContactItem({
   return (
     <Wrapper
       href={href}
-      className="flex items-start gap-3 border border-[var(--color-line)] rounded-[12px] p-4 bg-white transition-colors hover:border-[var(--color-brand)]"
+      className="flex items-start gap-3 border border-[var(--color-line)] rounded-[8px] p-4 bg-[var(--color-surface-alt)] transition-colors hover:border-[var(--color-brand)]"
     >
-      <div className="w-8 h-8 rounded-[8px] bg-[var(--color-brand-soft)] flex items-center justify-center text-[var(--color-brand)] shrink-0">
+      <div className="w-8 h-8 rounded-[6px] bg-[var(--color-brand-soft)] flex items-center justify-center text-[var(--color-brand)] shrink-0">
         <Icon size={16} />
       </div>
       <div className="min-w-0">
