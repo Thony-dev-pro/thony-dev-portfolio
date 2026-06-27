@@ -1,6 +1,5 @@
 const stats = [
-  { value: "3+", label: "ans d'expérience" },
-  { value: "15+", label: "projets livrés" },
+  { value: "1+", label: "ans d'expérience" },
   { value: "Full", label: "stack" },
 ];
 

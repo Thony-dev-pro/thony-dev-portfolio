@@ -15,6 +15,30 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    id: "mini-monitoring",
+    title: "MiniMonitoring — Dashboard de monitoring système en temps réel",
+    short: "Application web full-stack de monitoring système visualisant en temps réel les métriques d'un serveur (CPU, RAM, disque, uptime) avec rafraîchissement automatique toutes les 5 secondes.",
+    long: "Application web de monitoring système full-stack permettant de visualiser en temps réel les métriques d'un serveur (CPU, RAM, disque, uptime). Les données sont collectées côté serveur, persistées en base de données et exposées via une API REST consommée par un frontend réactif avec rafraîchissement automatique toutes les 5 secondes.",
+    challenge: "Mettre en place une architecture découplée frontend/backend permettant la collecte, la persistance et la visualisation en temps réel de métriques système, tout en gérant correctement le CORS et la conteneurisation multi-services.",
+    solution: "API REST Node.js pour la collecte et l'exposition des métriques, persistance des snapshots en PostgreSQL, frontend Angular 19 avec polling HTTP toutes les 5 secondes et jauges SVG animées. Ensemble des services conteneurisés via Docker avec proxy Angular pour la gestion du CORS.",
+    results: [
+      { label: "Rafraîchissement", value: "5s" },
+      { label: "Services Docker", value: "3" },
+      { label: "Métriques suivies", value: "4" },
+    ],
+    tags: ["Angular", "Node.js", "PostgreSQL", "Docker"],
+    featured: true,
+    code: `// metrics.controller.js
+router.get('/metrics', async (req, res) => {
+  const snapshot = await collectMetrics(); // CPU, RAM, disk, uptime
+  await db.query(
+    'INSERT INTO snapshots (cpu, ram, disk, uptime) VALUES ($1,$2,$3,$4)',
+    [snapshot.cpu, snapshot.ram, snapshot.disk, snapshot.uptime]
+  );
+  res.json(snapshot);
+});`,
+  },
+  {
     id: "mall-management",
     title: "Plateforme de gestion de centre commercial",
     short: "Architecture multi-rôles (Admin, Boutique, Acheteur) avec dashboard analytique, gestion de stock et tunnel de commande complet.",
@@ -39,4 +63,4 @@ function requireRole(...roles) {
   },
 ];
 
-export const allTags = ["Tous", "MongoDB", "Express.js", "Angular", "Node.js"];
+export const allTags = ["Tous", "MongoDB", "Express.js", "Angular", "Node.js", "PostgreSQL", "Docker"];
