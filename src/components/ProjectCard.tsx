@@ -16,7 +16,18 @@ export function ProjectCard({ project }: { project: Project }) {
           </span>
         ) : <span />}
         <div className="flex items-center gap-3 text-[var(--color-ink-soft)]">
-          {project.github && (
+          {project.githubLinks ? (
+            project.githubLinks.map((l) => (
+              <a
+                key={l.url}
+                href={l.url}
+                onClick={(e) => e.stopPropagation()}
+                className="flex items-center gap-1 text-xs hover:text-[var(--color-brand)]"
+              >
+                <Github size={14} /> {l.label}
+              </a>
+            ))
+          ) : project.github && (
             <a
               href={project.github}
               onClick={(e) => e.stopPropagation()}

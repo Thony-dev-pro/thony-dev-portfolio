@@ -9,7 +9,9 @@ export type Project = {
   tags: string[];
   featured?: boolean;
   github?: string;
+  githubLinks?: { label: string; url: string }[];
   demo?: string;
+  image?: string;
   code: string;
 };
 
@@ -28,6 +30,11 @@ export const projects: Project[] = [
     ],
     tags: ["Angular", "Node.js", "PostgreSQL", "Docker"],
     featured: true,
+    image: "/assets/images/monitoringImage.png",
+    githubLinks: [
+      { label: "Backend", url: "https://github.com/Thony-dev-pro/mini-monitoring" },
+      { label: "Frontend", url: "https://github.com/Thony-dev-pro/mini-monitoring-front" },
+    ],
     code: `// metrics.controller.js
 router.get('/metrics', async (req, res) => {
   const snapshot = await collectMetrics(); // CPU, RAM, disk, uptime

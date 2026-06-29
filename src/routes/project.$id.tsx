@@ -48,6 +48,13 @@ function ProjectDetailPage() {
         <p className="mt-4 text-[16px] text-[var(--color-ink-soft)] leading-relaxed">
           {project.long}
         </p>
+        {project.image && (
+          <img
+            src={project.image}
+            alt={project.title}
+            className="mt-6 rounded-[12px] border border-[var(--color-line)] w-full object-cover max-h-[400px]"
+          />
+        )}
         <div className="flex flex-wrap gap-1.5 mt-5">
           {project.tags.map((t: string) => (
             <span key={t} className="tag-mono">{t}</span>
@@ -79,7 +86,11 @@ function ProjectDetailPage() {
       </section>
 
       <div className="flex flex-wrap gap-3 mb-16">
-        {project.github && (
+        {project.githubLinks ? (
+          project.githubLinks.map((l) => (
+            <a key={l.url} href={l.url} className="btn-primary"><Github size={14} /> GitHub {l.label}</a>
+          ))
+        ) : project.github && (
           <a href={project.github} className="btn-primary"><Github size={14} /> Voir le code GitHub</a>
         )}
         {project.demo && (
