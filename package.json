@@ -1,6 +1,6 @@
 {
   "name": "tanstack_start_ts",
-  "homepage": "https://Thony-dev-pro.github.io/thony-dev-portfolio",
+  "homepage": "https://thony-dev-pro.github.io/thony-dev-portfolio",
   "private": true,
   "sideEffects": false,
   "type": "module",
@@ -11,6 +11,7 @@
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write .",
+    "predeploy": "npm run build",
     "deploy" : "gh-pages -d public"
   },
   "dependencies": {
