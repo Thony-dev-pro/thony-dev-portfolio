@@ -4,12 +4,6 @@ import { ProjectCard } from "@/components/ProjectCard";
 import { projects, allTags } from "@/data/projects";
 
 export const Route = createFileRoute("/projects")({
-  head: () => ({
-    meta: [
-      { title: "Projets — Rasolofondraibe Thony" },
-      { name: "description", content: "Sélection des projets back-end Node.js livrés par Rasolofondraibe Thony." },
-    ],
-  }),
   component: ProjectsPage,
 });
 

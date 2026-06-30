@@ -5,18 +5,11 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { SkillChip } from "@/components/SkillChip";
 import { ProjectCard } from "@/components/ProjectCard";
 import { ContactItem } from "@/components/ContactItem";
-import { StatBar } from "@/components/StatBar";
 import { skills } from "@/data/skills";
 import { projects } from "@/data/projects";
 import { experience } from "@/data/experience";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Rasolofondraibe Thony — Développeur Full Stack" },
-      { name: "description", content: "Développeur Full Stack spécialisé en Node.js, Angular et MongoDB." },
-    ],
-  }),
   component: HomePage,
 });
 
@@ -61,9 +54,6 @@ function HomePage() {
           <CodeBlock code={heroCode} />
         </div>
       </section>
-
-      {/* STATS */}
-      <StatBar />
 
       {/* STACK */}
       <section className="max-w-6xl mx-auto px-6 py-20">

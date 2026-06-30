@@ -4,12 +4,6 @@ import { Mail, Linkedin, Github, MapPin, Send, CheckCircle2 } from "lucide-react
 import { ContactItem } from "@/components/ContactItem";
 
 export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contact — Rasolofondraibe Thony" },
-      { name: "description", content: "Contactez Rasolofondraibe Thony pour une mission freelance ou un poste Full Stack." },
-    ],
-  }),
   component: ContactPage,
 });
 
