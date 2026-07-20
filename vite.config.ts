@@ -4,12 +4,12 @@ import tailwindcss from "@tailwindcss/vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 import { TanStackRouterVite } from "@tanstack/router-plugin/vite";
 
-export default defineConfig({
-  base: "/thony-dev-portfolio/",
+export default defineConfig(({ mode }) => ({
+  base: mode === "production" ? "/thony-dev-portfolio/" : "/",
   plugins: [
     TanStackRouterVite({ routesDirectory: "./src/routes", generatedRouteTree: "./src/routeTree.gen.ts" }),
     react(),
     tailwindcss(),
     tsconfigPaths(),
   ],
-});
+}));
