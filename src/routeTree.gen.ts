@@ -9,7 +9,6 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
@@ -17,11 +16,6 @@ import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as ProjectIdRouteImport } from './routes/project.$id'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ProjectsRoute = ProjectsRouteImport.update({
   id: '/projects',
   path: '/projects',
@@ -57,7 +51,6 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/projects': typeof ProjectsRoute
-  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/project/$id': typeof ProjectIdRoute
   '/blog/': typeof BlogIndexRoute
@@ -66,7 +59,6 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/projects': typeof ProjectsRoute
-  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/project/$id': typeof ProjectIdRoute
   '/blog': typeof BlogIndexRoute
@@ -76,7 +68,6 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/projects': typeof ProjectsRoute
-  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/project/$id': typeof ProjectIdRoute
   '/blog/': typeof BlogIndexRoute
@@ -87,25 +78,16 @@ export interface FileRouteTypes {
     | '/'
     | '/contact'
     | '/projects'
-    | '/sitemap.xml'
     | '/blog/$slug'
     | '/project/$id'
     | '/blog/'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/contact'
-    | '/projects'
-    | '/sitemap.xml'
-    | '/blog/$slug'
-    | '/project/$id'
-    | '/blog'
+  to: '/' | '/contact' | '/projects' | '/blog/$slug' | '/project/$id' | '/blog'
   id:
     | '__root__'
     | '/'
     | '/contact'
     | '/projects'
-    | '/sitemap.xml'
     | '/blog/$slug'
     | '/project/$id'
     | '/blog/'
@@ -115,7 +97,6 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
   ProjectsRoute: typeof ProjectsRoute
-  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   BlogSlugRoute: typeof BlogSlugRoute
   ProjectIdRoute: typeof ProjectIdRoute
   BlogIndexRoute: typeof BlogIndexRoute
@@ -123,13 +104,6 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/projects': {
       id: '/projects'
       path: '/projects'
@@ -179,7 +153,6 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
   ProjectsRoute: ProjectsRoute,
-  SitemapDotxmlRoute: SitemapDotxmlRoute,
   BlogSlugRoute: BlogSlugRoute,
   ProjectIdRoute: ProjectIdRoute,
   BlogIndexRoute: BlogIndexRoute,

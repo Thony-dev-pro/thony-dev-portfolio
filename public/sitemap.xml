@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>/</loc><changefreq>weekly</changefreq></url>
+  <url><loc>/projects</loc><changefreq>weekly</changefreq></url>
+  <url><loc>/blog</loc><changefreq>weekly</changefreq></url>
+  <url><loc>/contact</loc><changefreq>monthly</changefreq></url>
+  <url><loc>/project/mini-monitoring</loc><changefreq>monthly</changefreq></url>
+  <url><loc>/project/mall-management</loc><changefreq>monthly</changefreq></url>
+  <url><loc>/project/infrastructure-node-production</loc><changefreq>monthly</changefreq></url>
+  <url><loc>/blog/nodejs-perf-event-loop</loc><changefreq>monthly</changefreq></url>
+  <url><loc>/blog/postgres-indexation-pratique</loc><changefreq>monthly</changefreq></url>
+  <url><loc>/blog/docker-multistage</loc><changefreq>monthly</changefreq></url>
+  <url><loc>/blog/rest-vs-graphql</loc><changefreq>monthly</changefreq></url>
+  <url><loc>/blog/auth-jwt-pieges</loc><changefreq>monthly</changefreq></url>
+  <url><loc>/blog/microservices-quand-decouper</loc><changefreq>monthly</changefreq></url>
+</urlset>
