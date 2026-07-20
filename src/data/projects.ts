@@ -68,6 +68,33 @@ function requireRole(...roles) {
   };
 }`,
   },
+  {
+    id: "infrastructure-node-production",
+    title: "Infrastructure Node.js Production",
+    short: "Déploiement d'une API Node.js/Express sur VPS avec Docker Compose, reverse proxy Nginx, supervision Prometheus/Grafana, centralisation des logs Loki/Promtail et pipeline CI/CD GitHub Actions.",
+    long: "Projet d'apprentissage du déploiement et de l'administration d'une application backend en production. L'objectif était de concevoir une infrastructure complète, depuis le développement local jusqu'à l'automatisation des mises à jour, en reproduisant les pratiques utilisées en entreprise.",
+    challenge: "Déployer et administrer une application Node.js en production avec conteneurisation, reverse proxy, supervision, centralisation des logs et automatisation CI/CD sur un serveur VPS distant.",
+    solution: "API REST Node.js/Express avec PostgreSQL, conteneurisation Docker Compose de l'application, de la base de données, de Nginx, Prometheus, Grafana, Loki et Promtail. Configuration d'un VPS OVH sous Ubuntu avec SSH, UFW et déploiement automatisé via GitHub Actions.",
+    results: [
+      { label: "Services orchestrés", value: "7" },
+      { label: "Supervision", value: "Temps réel" },
+      { label: "Déploiement", value: "CI/CD" },
+    ],
+    tags: ["Node.js", "Express.js", "PostgreSQL", "Docker", "Nginx", "Prometheus", "Grafana", "GitHub Actions"],
+    featured: true,
+    image: undefined,
+    code: `// docker-compose.yml
+services:
+  app:
+    build: ./backend
+    environment:
+      DATABASE_URL: postgres://user:pass@db:5432/app
+  db:
+    image: postgres:15
+  nginx:
+    image: nginx:alpine
+    ports: ["80:80"]`,
+  },
 ];
 
-export const allTags = ["Tous", "MongoDB", "Express.js", "Angular", "Node.js", "PostgreSQL", "Docker"];
+export const allTags = ["Tous", "MongoDB", "Express.js", "Angular", "Node.js", "PostgreSQL", "Docker", "Nginx", "Prometheus", "Grafana", "GitHub Actions", "Linux", "SSH", "GitHub"];
