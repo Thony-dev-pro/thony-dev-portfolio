@@ -3,7 +3,7 @@ import { routeTree } from "./routeTree.gen";
 
 export const router = createRouter({
   routeTree,
-  basepath: "/thony-dev-portfolio",
+  basepath: import.meta.env.PROD ? "/thony-dev-portfolio" : "/",
   scrollRestoration: true,
 });
 
