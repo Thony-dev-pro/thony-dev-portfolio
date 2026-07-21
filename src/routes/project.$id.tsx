@@ -39,6 +39,11 @@ function ProjectDetailPage() {
         <h1 className="text-[32px] md:text-[38px] font-medium tracking-tight leading-tight">
           {project.title}
         </h1>
+        {project.subtitle && (
+          <p className="mt-3 text-[15px] md:text-[16px] text-[var(--color-brand)] font-mono">
+            {project.subtitle}
+          </p>
+        )}
         <p className="mt-4 text-[16px] text-[var(--color-ink-soft)] leading-relaxed">
           {project.long}
         </p>
@@ -47,7 +52,64 @@ function ProjectDetailPage() {
             <span key={t} className="tag-mono">{t}</span>
           ))}
         </div>
+        {(project.github || project.githubLinks) && (
+          <div className="flex flex-wrap gap-2 mt-5">
+            {project.githubLinks
+              ? project.githubLinks.map((l) => (
+                  <a key={l.url} href={l.url} className="btn-terminal">
+                    <Github size={14} /> {l.label}
+                  </a>
+                ))
+              : project.github && (
+                  <a href={project.github} className="btn-terminal">
+                    <Github size={14} /> Voir sur GitHub
+                  </a>
+                )}
+          </div>
+        )}
       </header>
+
+      {project.context && (
+        <section className="mb-10">
+          <h2 className="text-[20px] font-medium mb-3">Contexte</h2>
+          <p className="text-[15px] text-[var(--color-ink-soft)] leading-relaxed">{project.context}</p>
+        </section>
+      )}
+
+      {project.keyPoints && project.keyPoints.length > 0 && (
+        <section className="mb-10">
+          <h2 className="text-[20px] font-medium mb-4">Points clés techniques</h2>
+          <ul className="space-y-2.5">
+            {project.keyPoints.map((p, i) => (
+              <li key={i} className="flex gap-3 text-[15px] text-[var(--color-ink-soft)] leading-relaxed">
+                <span className="text-[var(--color-brand)] font-mono select-none">▸</span>
+                <span>{p}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {project.gallery && project.gallery.length > 0 && (
+        <section className="mb-10">
+          <h2 className="text-[20px] font-medium mb-4">Aperçus</h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {project.gallery.map((g) => (
+              <figure
+                key={g.placeholder}
+                className="border border-[var(--color-line)] rounded-[8px] bg-[var(--color-surface-alt)] overflow-hidden"
+              >
+                <div className="aspect-[16/10] flex items-center justify-center bg-[var(--color-surface-mute)] text-[var(--color-ink-faint)] font-mono text-[11px] px-3 text-center">
+                  {g.placeholder}
+                </div>
+                <figcaption className="px-3 py-2 text-[12px] text-[var(--color-ink-soft)] border-t border-[var(--color-line)]">
+                  {g.caption}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+      )}
 
       <section className="mb-10">
         <h2 className="text-[20px] font-medium mb-3">Le défi</h2>
