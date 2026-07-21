@@ -120,4 +120,4 @@ services:
   },
 ];
 
-export const allTags = ["Tous", "MongoDB", "Express.js", "Angular", "Node.js", "PostgreSQL", "Docker", "Nginx", "Prometheus", "Grafana", "GitHub Actions", "Linux", "SSH", "GitHub"];
+export const allTags = ["Tous", "MongoDB", "Express", "Express.js", "Angular", "Node.js", "PostgreSQL", "Docker", "Nginx", "Prometheus", "Grafana", "Loki", "GitHub Actions", "Linux", "OVH", "SSH", "GitHub"];
