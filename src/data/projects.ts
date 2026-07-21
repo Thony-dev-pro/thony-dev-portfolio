@@ -74,9 +74,27 @@ function requireRole(...roles) {
   },
   {
     id: "infrastructure-node-production",
-    title: "Infrastructure Node.js Production",
-    short: "Déploiement d'une API Node.js/Express sur VPS avec Docker Compose, reverse proxy Nginx, supervision Prometheus/Grafana, centralisation des logs Loki/Promtail et pipeline CI/CD GitHub Actions.",
-    long: "Projet d'apprentissage du déploiement et de l'administration d'une application backend en production. L'objectif était de concevoir une infrastructure complète, depuis le développement local jusqu'à l'automatisation des mises à jour, en reproduisant les pratiques utilisées en entreprise.",
+    title: "Infrastructure DevOps Production-Ready",
+    subtitle: "API Node.js déployée sur VPS avec Docker, monitoring temps réel et CI/CD automatisé.",
+    short: "Infrastructure DevOps complète : API Node.js conteneurisée, reverse proxy Nginx, supervision Prometheus/Grafana, logs Loki et déploiement automatisé via GitHub Actions.",
+    long: "Infrastructure DevOps complète simulant un environnement de production : API REST Node.js/Express connectée à PostgreSQL, conteneurisée avec Docker, déployée sur un VPS Linux (OVH) derrière un reverse proxy Nginx, supervisée en temps réel et mise à jour automatiquement à chaque push.",
+    context: "Projet réalisé pour apprendre à déployer et administrer une application backend en conditions réelles, en reproduisant les pratiques utilisées en entreprise. L'objectif : aller au-delà du simple développement d'API et concevoir une chaîne complète, du code local jusqu'à la supervision et l'automatisation des mises à jour.",
+    keyPoints: [
+      "API REST Node.js/Express connectée à PostgreSQL, structurée par environnements via variables d'env.",
+      "Conteneurisation Docker + Docker Compose orchestrant app, base, Nginx, Prometheus, Grafana, Loki et Promtail.",
+      "Reverse proxy Nginx en frontal, déployé sur un VPS OVH Ubuntu administré via SSH et sécurisé avec UFW.",
+      "Supervision temps réel : métriques CPU/RAM/app collectées par Prometheus et visualisées dans Grafana.",
+      "Centralisation des logs applicatifs et services avec Loki/Promtail, exploitables depuis Grafana.",
+      "Pipeline CI/CD GitHub Actions : à chaque push sur main, rebuild des images et redéploiement automatique.",
+    ],
+    gallery: [
+      { placeholder: "[IMG_ARCHITECTURE]", caption: "Schéma d'architecture globale" },
+      { placeholder: "[IMG_GRAFANA]", caption: "Dashboard Grafana en temps réel" },
+      { placeholder: "[IMG_CICD]", caption: "Pipeline CI/CD GitHub Actions" },
+      { placeholder: "[IMG_DOCKER]", caption: "Conteneurs Docker en production" },
+      { placeholder: "[IMG_APP]", caption: "Application en fonctionnement" },
+      { placeholder: "[IMG_LOGS]", caption: "Logs centralisés (Loki/Grafana)" },
+    ],
     challenge: "Déployer et administrer une application Node.js en production avec conteneurisation, reverse proxy, supervision, centralisation des logs et automatisation CI/CD sur un serveur VPS distant.",
     solution: "API REST Node.js/Express avec PostgreSQL, conteneurisation Docker Compose de l'application, de la base de données, de Nginx, Prometheus, Grafana, Loki et Promtail. Configuration d'un VPS OVH sous Ubuntu avec SSH, UFW et déploiement automatisé via GitHub Actions.",
     results: [
@@ -84,8 +102,9 @@ function requireRole(...roles) {
       { label: "Supervision", value: "Temps réel" },
       { label: "Déploiement", value: "CI/CD" },
     ],
-    tags: ["Node.js", "Express.js", "PostgreSQL", "Docker", "Nginx", "Prometheus", "Grafana", "GitHub Actions"],
+    tags: ["Node.js", "Express", "PostgreSQL", "Docker", "Nginx", "Prometheus", "Grafana", "Loki", "GitHub Actions", "Linux", "OVH", "SSH"],
     featured: true,
+    github: "[LIEN_GITHUB]",
     image: undefined,
     code: `// docker-compose.yml
 services:
