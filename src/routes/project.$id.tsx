@@ -1,6 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ArrowLeft, Github, ExternalLink } from "lucide-react";
-import { CodeBlock } from "@/components/CodeBlock";
+import { ArrowLeft, Github } from "lucide-react";
 import { projects, type Project } from "@/data/projects";
 
 export const Route = createFileRoute("/project/$id")({
@@ -112,36 +111,9 @@ function ProjectDetailPage() {
       )}
 
       <section className="mb-10">
-        <h2 className="text-[20px] font-medium mb-3">Le défi</h2>
-        <p className="text-[15px] text-[var(--color-ink-soft)] leading-relaxed">{project.challenge}</p>
-      </section>
-
-      <section className="mb-10">
         <h2 className="text-[20px] font-medium mb-3">Solution technique</h2>
-        <p className="text-[15px] text-[var(--color-ink-soft)] leading-relaxed mb-5">{project.solution}</p>
-        <CodeBlock code={project.code} filename="extrait.js" />
+        <p className="text-[15px] text-[var(--color-ink-soft)] leading-relaxed">{project.solution}</p>
       </section>
-
-      <section className="mb-10">
-        <h2 className="text-[20px] font-medium mb-4">Résultats</h2>
-        <div className="grid sm:grid-cols-3 gap-4">
-          {project.results.map((r: { label: string; value: string }) => (
-            <div key={r.label} className="border border-[var(--color-line)] rounded-[12px] p-5 bg-[var(--color-surface-alt)]">
-              <div className="text-[24px] font-medium text-[var(--color-brand)]">{r.value}</div>
-              <div className="text-[12px] text-[var(--color-ink-soft)] mt-1">{r.label}</div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <div className="flex flex-wrap gap-3 mb-16">
-        {project.github && (
-          <a href={project.github} className="btn-primary"><Github size={14} /> Voir le code GitHub</a>
-        )}
-        {project.demo && (
-          <a href={project.demo} className="btn-outline"><ExternalLink size={14} /> Demo live</a>
-        )}
-      </div>
     </article>
   );
 }
