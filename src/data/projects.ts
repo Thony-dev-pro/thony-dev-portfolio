@@ -104,7 +104,7 @@ function requireRole(...roles) {
     ],
     tags: ["Node.js", "Express", "PostgreSQL", "Docker", "Nginx", "Prometheus", "Grafana", "Loki", "GitHub Actions", "Linux", "OVH", "SSH"],
     featured: true,
-    github: "[LIEN_GITHUB]",
+    github: "https://github.com/Thony-dev-pro/Infrastructure-Node-Js-Production.git",
     image: undefined,
     code: `// docker-compose.yml
 services:

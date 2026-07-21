@@ -109,11 +109,6 @@ function ProjectDetailPage() {
           </div>
         </section>
       )}
-
-      <section className="mb-10">
-        <h2 className="text-[20px] font-medium mb-3">Solution technique</h2>
-        <p className="text-[15px] text-[var(--color-ink-soft)] leading-relaxed">{project.solution}</p>
-      </section>
     </article>
   );
 }
