@@ -1,8 +1,12 @@
 export type Project = {
   id: string;
   title: string;
+  subtitle?: string;
   short: string;
   long: string;
+  context?: string;
+  keyPoints?: string[];
+  gallery?: { placeholder: string; caption: string }[];
   challenge: string;
   solution: string;
   results: { label: string; value: string }[];
