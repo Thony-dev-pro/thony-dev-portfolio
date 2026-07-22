@@ -98,8 +98,12 @@ function ProjectDetailPage() {
                 key={g.placeholder}
                 className="border border-[var(--color-line)] rounded-[8px] bg-[var(--color-surface-alt)] overflow-hidden"
               >
-                <div className="aspect-[16/10] flex items-center justify-center bg-[var(--color-surface-mute)] text-[var(--color-ink-faint)] font-mono text-[11px] px-3 text-center">
-                  {g.placeholder}
+                <div className="aspect-[16/10] flex items-center justify-center bg-[var(--color-surface-mute)] overflow-hidden">
+                  {g.placeholder.startsWith("/") ? (
+                    <img src={g.placeholder} alt={g.caption} className="w-full h-full object-cover" />
+                  ) : (
+                    <span className="text-[var(--color-ink-faint)] font-mono text-[11px] px-3 text-center">{g.placeholder}</span>
+                  )}
                 </div>
                 <figcaption className="px-3 py-2 text-[12px] text-[var(--color-ink-soft)] border-t border-[var(--color-line)]">
                   {g.caption}

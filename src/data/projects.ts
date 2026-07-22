@@ -88,7 +88,7 @@ function requireRole(...roles) {
       "Pipeline CI/CD GitHub Actions : à chaque push sur main, rebuild des images et redéploiement automatique.",
     ],
     gallery: [
-      { placeholder: "[IMG_ARCHITECTURE]", caption: "Schéma d'architecture globale" },
+      { placeholder: "/assets/images/infraNode/structure.png", caption: "Schéma d'architecture globale" },
       { placeholder: "[IMG_GRAFANA]", caption: "Dashboard Grafana en temps réel" },
       { placeholder: "[IMG_CICD]", caption: "Pipeline CI/CD GitHub Actions" },
       { placeholder: "[IMG_DOCKER]", caption: "Conteneurs Docker en production" },
